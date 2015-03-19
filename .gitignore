@@ -1,4 +1,9 @@
+# editor stuff
 *~
-*.pyc
 
+# python stuff
+*.pyc
+*.egg-info
+
+# virtual environments
 test-env

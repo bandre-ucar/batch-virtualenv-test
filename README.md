@@ -6,3 +6,25 @@ proof of concept project to put together a python mpi application that can be ru
 * runs on the compute nodes of an hpc machine.
 
 
+Dependencies
+------------
+
+required compiled libraries
+
+* numpy
+* scipy 
+* matplotlib & basemap
+* mpi4py
+* netcdf4-python (?)
+* PythonMagick (maybe http://docs.wand-py.org/en/0.4.0/)
+
+
+On mac homebrew system:
+
+brew install mpich2
+brew tap homebrew/science
+brew tap homebrew/python
+brew install numpy scipy matplotlib matplotlib-basemap 
+
+
+on 
