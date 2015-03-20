@@ -14,12 +14,9 @@ module load mpi4py/1.3.1
 
 . test-env/bin/activate
 
-echo "running diagnostics in serial mode..."
-diags_generator.py
-
 echo
 echo "running diagnostics in parallel..."
-mpirun.lsf -np 4 diags_generator.py
+mpirun.lsf diags_generator.py
 
 echo
 echo "successful completion of demo"
