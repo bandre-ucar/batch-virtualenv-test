@@ -42,10 +42,34 @@ brew install numpy scipy matplotlib matplotlib-basemap
 Workflow
 ========
 
+Users
+-----
+
 ```bash
-# on os x we need to install mpi4py, so it has a special init rule
-make osx
-# on the supers run this
-make env
-. test-env/bin/activate
-make all
+
+    cd $(POSTPROCESSING_DIR)
+    ./create_diags.sh
+    # ./test-app-osx.run
+    # or
+    # bsub ./test-app-yellowstone.run
+    
+```
+
+
+Developers
+----------
+
+
+```bash
+
+    make clobber-env
+    make env
+    . test-env/bin/activate
+    make all
+    make test
+    # do development stuff....
+    diag_util_test.py 
+    mpiexect -np 4 diags_generator.py
+    deactivate
+
+```

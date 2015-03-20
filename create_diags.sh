@@ -16,10 +16,15 @@ make env
 # install post processing packages
 make all
 
-#
-echo "Testing post processing install"
+# run some self tests
+echo "Testing post processing installation."
+# run unit tests here?
+
+# is one of our installed executables in the path?
 diag_util_test.py
 
+# generate the run script
+echo "pretend like the run script was generate here...."
 
 # cleanup and deactivate the virtualenv. probably not strictly necessary
 deactivate

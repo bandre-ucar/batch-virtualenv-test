@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# dummy run script for mac os x
+#
+
+. test-env/bin/activate
+
+echo "running diagnostics in serial mode..."
+diags_generator.py
+
+echo
+echo "running diagnostics in parallel..."
+mpiexec -np 4 diags_generator.py
+
+echo
+echo "successful completion of demo"
+
+deactivate

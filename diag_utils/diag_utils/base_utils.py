@@ -9,10 +9,12 @@ from __future__ import print_function
 
 import cesm_utils
 
+
 def foo_ify(message):
     """This function foo-ifies a message
     """
     return "FOO: {0}".format(message)
+
 
 def foobar_ify(message):
     """This function foobar-ifies a message

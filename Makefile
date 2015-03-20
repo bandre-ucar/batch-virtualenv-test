@@ -1,13 +1,19 @@
 # -*- mode: Makefile -*-
 #
-# To use virtualenv in a make file:
+# NOTES:
+#
+# - To use virtualenv in a make file:
 #
 #	. test-env/bin/activate; pip install grako
 #
-# On machine without virtualenv
+#   I don't think we want to do that because we want to use a
+#   requirements.txt file.
 #
-# pip install --user virtualenv
-# PATH=$(PATH):$(HOME)/.local/bin
+# - On machine without virtualenv
+#
+#   pip install --user virtualenv
+#   export PATH=$(PATH):$(HOME)/.local/bin
+#   virtualenv --system-site-packages ENVNAME
 #
 ENVNAME=test-env
 
@@ -38,25 +44,17 @@ endif
 
 all : $(SUBDIRS)
 
+test : $(SUBDIRS)
+
 env : $(VIRTUALENV)/bin/activate
 
 $(VIRTUALENV)/bin/activate : 
 	virtualenv --system-site-packages $(ENVNAME)
 
 
-osx : env
-	. $(ENVNAME)/bin/activate; pip install mpi4py
-
-
-
-
-
-
-
-
-
-
-
+#
+# cleanup 
+#
 clean : FORCE
 	-rm *~ *.pyc
 
