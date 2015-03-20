@@ -6,6 +6,10 @@
 
 echo "load modules for hpc machine here"
 
+module load python/2.7.7
+module load numpy/1.8.1
+module load scipy/0.15.1
+
 # create the virtual environment. Makefile checks to see if it is
 # already setup, so only done once per case.
 make env

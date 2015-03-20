@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# dummy run script for yellowstone
+#
+
+module load python/2.7.7
+module load numpy/1.8.1
+module load scipy/0.15.1
+
+. test-env/bin/activate
+
+echo "running diagnostics in serial mode..."
+diags_generator.py
+
+echo
+echo "running diagnostics in parallel..."
+mpiexec -np 4 diags_generator.py
+
+echo
+echo "successful completion of demo"
+
+deactivate

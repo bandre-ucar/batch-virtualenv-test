@@ -62,14 +62,20 @@ Developers
 
 ```bash
 
+    # load modules if necessary
+    module load python/2.7.7
+    module load numpy/1.8.1
+    module load scipy/0.15.1
+
     make clobber-env
     make env
     . test-env/bin/activate
     make all
     make test
     # do development stuff....
-    diag_util_test.py 
-    mpiexect -np 4 diags_generator.py
+    diag_util_test.py
+    # mpiexect -np 4 diags_generator.py
+    # execca mpiexect -np 4 diags_generator.py
     deactivate
 
 ```
