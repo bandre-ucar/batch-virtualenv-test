@@ -38,6 +38,19 @@ brew tap homebrew/python
 brew install numpy scipy matplotlib matplotlib-basemap 
 ```
 
+Yellowstone
+-----------
+
+Note, yellowstone doesn't have virtualenv installed yet. You need to
+bootstrap it with:
+
+```bash
+
+    pip install --user virtualenv
+    export PATH=$PATH:$HOME/.local/bin
+
+```
+
 
 Workflow
 ========
@@ -75,7 +88,7 @@ Developers
     # do development stuff....
     diag_util_test.py
     # mpiexect -np 4 diags_generator.py
-    # execca mpiexect -np 4 diags_generator.py
+    # DAV_CORES=4 execca mpirun.lsf diags_generator.py
     deactivate
 
 ```
