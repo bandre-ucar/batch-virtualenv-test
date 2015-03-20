@@ -88,7 +88,7 @@ Developers
     make test
     # do development stuff....
     diag_util_test.py
-    # mpiexect -np 4 diags_generator.py
+    # mpiexec -np 4 diags_generator.py
     # DAV_CORES=4 execca mpirun.lsf diags_generator.py
     deactivate
 
