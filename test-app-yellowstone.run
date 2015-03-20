@@ -4,14 +4,8 @@
 #
 #BSUB -n 4
 #BSUB -q caldera
-#BSUB -N
-#BSUB -a poe
-#BSUB -x
-#BSUB -o cesm.stdout.%J
-#BSUB -e cesm.stderr.%J
 #BSUB -J test-virtualenv
-#BSUB -W 2:00
-#BSUB -P P93300041
+#BSUB -W 0:30
 
 module load python/2.7.7
 module load numpy/1.8.1
