@@ -7,9 +7,15 @@ proof of concept project to put together a python mpi application that can be ru
 
 
 Dependencies
-------------
+============
 
-required compiled libraries
+required bootstrap:
+
+* python2
+* pip
+* virtualenv
+
+required compiled libraries:
 
 * numpy
 * scipy 
@@ -19,12 +25,27 @@ required compiled libraries
 * PythonMagick (maybe http://docs.wand-py.org/en/0.4.0/)
 
 
-On mac homebrew system:
+Bootstrap
+=========
 
+Mac homebrew system
+-------------------
+
+```bash
 brew install mpich2
 brew tap homebrew/science
 brew tap homebrew/python
 brew install numpy scipy matplotlib matplotlib-basemap 
+```
 
 
-on 
+Workflow
+========
+
+```bash
+# on os x we need to install mpi4py, so it has a special init rule
+make osx
+# on the supers run this
+make env
+. test-env/bin/activate
+make all

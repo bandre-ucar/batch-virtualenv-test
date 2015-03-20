@@ -12,9 +12,9 @@
 ENVNAME=test-env
 
 SUBDIRS = \
-	foo_lib \
-	bar_lib \
-#	app_mpi
+	cesm_utils \
+	diag_utils \
+	mpi_app_diags
 
 # MAKECMDGOALS is the make option: make 'clobber' or 'all'
 TARGET = $(MAKECMDGOALS)
@@ -38,14 +38,13 @@ endif
 
 all : $(SUBDIRS)
 
-env : $(VIRTUALENV)/bin/activate install-packages
+env : $(VIRTUALENV)/bin/activate
 
 $(VIRTUALENV)/bin/activate : 
 	virtualenv --system-site-packages $(ENVNAME)
 
 
-install-packages :
-	. $(ENVNAME)/bin/activate; pip install sympy
+osx : env
 	. $(ENVNAME)/bin/activate; pip install mpi4py
 
 

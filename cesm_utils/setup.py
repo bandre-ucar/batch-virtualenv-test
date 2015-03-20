@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages
 
-setup(name='bar',
+setup(name='cesm_utils',
       version='0.1.2',
       packages=find_packages(),
-      description="bar library",
-      url='url')
+      description="pseudo cesm_utils library")

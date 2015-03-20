@@ -10,12 +10,14 @@ from __future__ import print_function
 import numpy
 import sympy
 
-import foolib.foo_utils
+import diag_utils
+
 
 def numpy_sqrt(x):
     """
     """
     return numpy.sqrt(x)
+
 
 def sympy_quad():
     """
@@ -24,10 +26,11 @@ def sympy_quad():
     ans = sympy.solve('x**2 - 2', x)
     return ans
 
+
 def fooy(message):
     """
     """
-    return foolib.foo_utils.fooify(message)
+    return diag_utils.base_utils.foobar_ify(message)
 
 
 if __name__ == '__main__':

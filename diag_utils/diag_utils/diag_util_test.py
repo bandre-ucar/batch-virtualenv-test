@@ -3,11 +3,12 @@ from __future__ import print_function
 
 import sys
 
-import foolib.foo_utils
+from diag_utils.diag_base import fooy
+
 
 if __name__ == '__main__':
     try:
-        print(foolib.foo_utils.fooify('abc'))
+        print(fooy('test test test'))
         sys.exit(0)
     except Exception as e:
         print(e)

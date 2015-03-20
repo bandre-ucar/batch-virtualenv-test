@@ -12,19 +12,27 @@ import sys
 #
 # built-in modules
 #
+
 #
 # installed dependencies
 #
+import numpy
 
 #
 # other modules in this package
 #
-import foolib
 
-def foobarify(message):
+
+def bar_ify(message):
     """
     """
-    return "BAR: {0}".format(foolib.foo_utils.fooify(message))
+    return "BAR: {0}".format(message)
+
+
+def bar_sqrt(x):
+    """
+    """
+    return numpy.sqrt(x)
 
 
 if __name__ == "__main__":
