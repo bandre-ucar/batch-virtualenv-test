@@ -3,7 +3,7 @@
 # dummy run script for yellowstone
 #
 #BSUB -n 4
-#BSUB -q caldera
+#BSUB -q small
 #BSUB -J test-virtualenv
 #BSUB -W 0:30
 

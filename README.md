@@ -35,7 +35,8 @@ Mac homebrew system
 brew install mpich2
 brew tap homebrew/science
 brew tap homebrew/python
-brew install numpy scipy matplotlib matplotlib-basemap 
+brew install numpy scipy matplotlib matplotlib-basemap
+pip install mpi4py
 ```
 
 Yellowstone
@@ -64,7 +65,7 @@ Users
     ./create_diags.sh
     # ./test-app-osx.run
     # or
-    # bsub ./test-app-yellowstone.run
+    # bsub -PP93300606 < ./test-app-yellowstone.run
     
 ```
 
