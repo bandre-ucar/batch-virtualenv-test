@@ -9,10 +9,10 @@ def get_requires():
 setup(name='diagnostics',
       version='2.3.4+alpha1',
       packages=find_packages(),
+      zip_safe=False,
       description="dummy diagnostics generator app",
       install_requires=get_requires(),
       scripts=['diagnostics/diags_generator.py'],
-      package_data={'diagnostics': ['Templates/*.tmpl'],
-                    'diagnostics': ['Config/*'],
+      package_data={'diagnostics': ['Templates/*.tmpl', 'Config/*'],
                     }
       )

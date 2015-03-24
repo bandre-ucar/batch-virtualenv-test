@@ -44,6 +44,8 @@ endif
 
 all : $(SUBDIRS)
 
+install : $(SUBDIRS)
+
 test : $(SUBDIRS)
 
 env : $(VIRTUALENV)/bin/activate
