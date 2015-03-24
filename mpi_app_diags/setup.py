@@ -11,4 +11,8 @@ setup(name='diagnostics',
       packages=find_packages(),
       description="dummy diagnostics generator app",
       install_requires=get_requires(),
-      scripts=['diagnostics/diags_generator.py'])
+      scripts=['diagnostics/diags_generator.py'],
+      package_data={'diagnostics': ['Templates/*.tmpl'],
+                    'diagnostics': ['Config/*'],
+                    }
+      )

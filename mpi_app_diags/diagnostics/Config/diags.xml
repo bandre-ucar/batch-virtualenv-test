@@ -1,0 +1,4 @@
+<configuration>
+   <variable name='foo'>1.234</variable>
+   <variable name='bar'>this is a test</variable>
+</configuration>

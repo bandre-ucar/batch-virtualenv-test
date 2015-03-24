@@ -20,12 +20,16 @@ if sys.hexversion < 0x02070000:
 #
 # built-in modules
 #
+from pkg_resources import Requirement, resource_filename, resource_stream
 import traceback
+import xml.etree.ElementTree as etree
 
 #
 # installed dependencies
 #
 from mpi4py import MPI
+
+from jinja2 import Environment, PackageLoader
 
 #
 # other modules in this package
@@ -43,14 +47,35 @@ def main():
     rank = comm.Get_rank()
     size = comm.Get_size()
 
+    # Demonstration of accessing an installed data file...
     if rank == 0:
-        msg = "Hello from diagnostics"
+        filename = resource_filename('diagnostics', 'Config/diags.xml')
+        print("Here is your resource file: '{0}'".format(filename))
+
+        stream = resource_stream('diagnostics', 'Config/diags.xml')
+        xml = etree.parse(stream)
+        etree.dump(xml)
+    comm.barrier()
+
+    # Demonstration of access installed jinja2 templates...
+    env = Environment(loader=PackageLoader('diagnostics', 'Templates'))
+    template = env.get_template('hello.tmpl')
+    msg = template.render({'rank': rank, 'size': size})
+    print(msg)
+    comm.barrier()
+
+    # mpi broadcast data and modify it with a utility imported from
+    # one of our packages.
+    if rank == 0:
+        msg = "This is a message from process"
     else:
         msg = None
-
     msg = comm.bcast(msg, root=0)
     print("{0} {1} of {2}".format(fooy(msg), rank, size))
     comm.barrier()
+
+    # call a functon from one of our packages that depends on a
+    # bootstrap package.
     print("sqrt({0}) = {1}".format(rank, numpy_sqrt(rank)))
     if rank == 0:
         print("Rank 0 says : {0}".format(sympy_quad()))

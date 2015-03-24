@@ -21,8 +21,6 @@ required compiled libraries:
 * scipy 
 * matplotlib & basemap
 * mpi4py
-* netcdf4-python (?)
-* PythonMagick (maybe http://docs.wand-py.org/en/0.4.0/)
 
 
 Bootstrap
@@ -80,6 +78,7 @@ Developers
     module load python/2.7.7
     module load numpy/1.8.1
     module load scipy/0.15.1
+    module load mpi4py/1.3.1
 
     make clobber-env
     make env
